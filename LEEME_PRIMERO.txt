@@ -1,0 +1,33 @@
+BLOCKFORGE 3.4 · PC, MÓVIL Y RAILWAY
+
+1. Extrae el ZIP.
+2. Instala Node.js 22 o superior.
+3. Abre una terminal dentro de la carpeta Blockforge y ejecuta: npm start
+4. Abre http://localhost:3000
+
+Para jugar con amigos desde diferentes dispositivos, publica este proyecto en Railway con el Dockerfile incluido. Todos deben abrir el mismo enlace. Abrir juego.html con doble clic no inicia el servidor multijugador.
+
+PC: WASD para moverte; ratón para mirar; clic para disparar; R recargar; G granada; V, rueda o números para cambiar tus armas compradas; Espacio saltar; Shift correr; Esc menú.
+Móvil: joystick, arrastrar para mirar y botones de acción. El botón Arma recorre únicamente las armas de tu inventario.
+
+Granadas: las desbloqueadas son permanentes; una cada 5 segundos.
+Tienda: fuera del combate. Sal de la partida para comprar.
+Equipos: confirma un color antes de entrar. Compañeros del mismo color no se dañan; todos los supervivientes cooperan en Apocalipsis.
+Muertes: cuerpo articulado ragdoll, sin sangre ni trozos; reapareces después de 5 segundos en otro punto.
+Vida y munición: recogida automática al pasar cerca; vuelven a aparecer tras 20 segundos.
+
+MAPAS NORMALES
+Se conserva el escenario y el modo de rendimiento. Por defecto: 0 bots, jugadores reales. En preparación puedes activar de 5 a 15 bots. Las salas con bots están separadas de las salas sin bots; unirse a un amigo conserva su sala.
+
+APOCALIPSIS / SECTOR CERO
+Hasta 10 personas, sin bots aliados. Mapa ampliado a 128 x 112 metros, casas de dos niveles, escaleras y mobiliario. Construcciones, árboles y elementos de cobertura destructibles; el terreno principal permanece estable. La destrucción y colisiones se sincronizan para todos.
+Oleadas 5, 10, 15, 20…; un jefe cada tres oleadas. Ocho jefes: 400, 650, 900, 1150, 1400, 1650, 1900 y 2150 de vida. Cada llegada tiene una breve presentación antes de que el jefe ataque. Tras matarlo continúa la siguiente oleada. La campaña termina al vencer al octavo jefe.
+Zombis errantes, corredores y blindados; reparten sus objetivos entre los supervivientes. Pueden romper la cobertura para alcanzarlos.
+Para móviles, las oleadas grandes entran en grupos de hasta 24 zombis activos. Todos los zombis de la oleada deben eliminarse para avanzar. Los restos físicos son breves y limitados.
+En Esc / Menú puedes escoger velocidad normal o rápida (+18%).
+
+VALIDACIÓN
+npm test ejecuta las pruebas automáticas incluidas. Se verificaron inicialización PC/móvil, controles, cuentas, disparos, reaparición, sincronización online, inventario, progresión de los ocho jefes y destrucción. El rendimiento real depende del teléfono, conexión y servidor; no se midió en teléfonos físicos.
+
+DATOS
+Railway: usa un volumen persistente y configura DATA_DIR para conservar cuentas y compras. Mantén tu carpeta/volumen de datos anterior al actualizar. El ZIP contiene código, no tus datos de producción.
